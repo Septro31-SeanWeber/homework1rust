@@ -143,11 +143,7 @@ fn pick_longest_in_v1(v: Vec<String>) -> String {
 }
 
 fn pick_longest_in_v2(v: Vec<&str>) -> &str {
-        let mut r  = "";
-    for i in 1..v.len(){
-        r = pick_longest2(r, v[i]);
-    }
-    r
+    v.iter().fold("", |acc, x|pick_longest2(acc, *x))
 }
 
 #[test]
