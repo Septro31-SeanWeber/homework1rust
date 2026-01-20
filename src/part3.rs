@@ -142,7 +142,7 @@ fn pick_longest_in_v1(v: Vec<String>) -> String {
 }
 
 fn pick_longest_in_v2(v: Vec<&str>) -> &str {
-    v.iter().fold("", |acc, x|pick_longest2(acc, *x))
+    v.into_iter().fold("", pick_longest2)
 }
 
 #[test]
