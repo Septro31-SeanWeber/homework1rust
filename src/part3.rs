@@ -116,10 +116,9 @@ fn copy_me_test2() {
 
 // The same function from part2
 fn pick_longest2<'a>(s1: &'a str, s2: &'a str) -> &'a str {
-    if s1.len() > s2.len(){
-        s1
-    }else {
-        s2
+    match s1.len() > s2.len(){
+        true => s1,
+        false => s2
     }
 }
 
