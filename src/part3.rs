@@ -139,11 +139,7 @@ fn pick_longest2<'a>(s1: &'a str, s2: &'a str) -> &'a str {
 */
 
 fn pick_longest_in_v1(v: Vec<String>) -> String {
-    let mut r  = String::from("");
-    for i in 1..v.len(){
-        r = pick_longest2(r.as_str(), v[i].as_str()).to_string()
-    }
-    r
+    v.iter().fold((String::from("")), |acc, x| pick_longest2(acc.as_str(),x.as_str()).to_string())
 }
 
 fn pick_longest_in_v2(v: Vec<&str>) -> &str {
